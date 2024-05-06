@@ -4,6 +4,7 @@ import './config/db.js';
 
 //Routes
 import authRoutes from './routes/authRoutes.js';
+import taskRoutes from './routes/taskRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -11,7 +12,8 @@ const port = 3000;
 // middleware
 app.use(bodyParser.json());
 
-app.use('/api', authRoutes)
+app.use('/api', authRoutes);
+app.use('/api', taskRoutes);
 
 app.listen(port, () => {
     console.log(
